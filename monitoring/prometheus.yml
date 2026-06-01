@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s  # Thu thập metrics mỗi 15 giây
+
+scrape_configs:
+  - job_name: 'spring-boot-backend'
+    metrics_path: '/actuator/prometheus'  # Endpoint Spring Boot Actuator
+    static_configs:
+      - targets: ['backend:8080']
